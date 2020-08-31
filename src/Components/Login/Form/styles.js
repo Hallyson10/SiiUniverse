@@ -19,6 +19,7 @@ export const Buttom = styled.TextInput `
     min-height : 68px;
     max-height : 68px;
     padding-left : 20px;
+    padding-right : 20px;
     font-size : ${size.medium_large}px;
     color : ${colors.letras_login};
     font-family : ${fontFamily.fontFamily}

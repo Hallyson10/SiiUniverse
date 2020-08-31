@@ -10,5 +10,12 @@ font-size : 24px;
 font-family : ${fontFamily.fontFamily}
 `
 export const ImageDesignTop = styled.Image `
-    margin-bottom : 10px;
+    
+`
+export const ImageDesignBottom = styled(ImageDesignTop) `
+    align-self:flex-end;
+    z-index: 1;
+    position : absolute;
+    bottom : 0;
+    margin-bottom : -60px;
 `

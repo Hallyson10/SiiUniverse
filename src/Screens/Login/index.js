@@ -4,15 +4,19 @@ import Form from '../../Components/Login/Form/index';
 import Buttons from '../../Components/Login/Buttoms/index';
 import ButtomLogin from '../../Components/Bottoms/buttonLogin';
 import Register from './Register/index';
-import CabecalhoComponentLogin from '../../Components/Login/Header/index';
+import HeaderComponentLogin from '../../Components/Login/ImageDesign/index';
+import BottomComponentLogin from '../../Components/Login/ImageDesign/bottom';
 
-const Login = () => {
+const Login = (props) => {
     const [login,setLogin] = useState(true);
     const [register, setRegister] = useState(false);
 
   return (
+
       <Styles.Container>
-      <CabecalhoComponentLogin/>
+    <Styles.SubContainer>
+
+      <HeaderComponentLogin/>
             <Buttons
                 onPressLogin={()=>{
                     setLogin(true)
@@ -28,13 +32,19 @@ const Login = () => {
             login ?
             <> 
             <Form/>
-            <ButtomLogin/>
+            <ButtomLogin 
+            title='Entrar'
+            onPress={()=>props.navigation.navigate('Main')}/>
             </>
             :
             <Register/>
             }
+            <BottomComponentLogin/>
+            </Styles.SubContainer>
+
       </Styles.Container>
+
   )
 }
 
-export default Login;
+export default React.memo(Login);

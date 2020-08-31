@@ -1,14 +1,14 @@
 import React from 'react';
 import * as Styles from './styles';
 
-const Bottoms = () => {
+const Bottoms = (props) => {
   return (
-      <Styles.ViewBottomLogin>
+      <Styles.ViewBottomLogin activeOpacity={0.9} onPress={props.onPress}>
         <Styles.TitleButtonLogin>
-            Entrar
+            {props.title}
         </Styles.TitleButtonLogin>
       </Styles.ViewBottomLogin>
   )
 }
 
-export default Bottoms;
+export default React.memo(Bottoms);

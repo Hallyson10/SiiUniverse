@@ -4,6 +4,7 @@ import { createStackNavigator,CardStyleInterpolators,TransitionPresets } from '@
 import Main from '../Screens/Main/index';
 import Login from '../Screens/Login/index';
 import MainLogout from '../Screens/MainLogout/index';
+import Profile from '../Screens/Profile/index';
 
 import { useFonts } from 'expo-font';
 
@@ -43,6 +44,10 @@ export default function Index(){
             options={{
             headerShown:false,
             }}  name="Login" component={Login} />
+            <Stack.Screen 
+            options={{
+            headerShown:false,
+            }}  name="Profile" component={Profile} />
         </Stack.Navigator>
         </NavigationContainer>
     )

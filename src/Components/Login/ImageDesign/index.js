@@ -5,9 +5,9 @@ const Header = (props) => {
   return (
       <>
     <Styles.ImageDesignTop
-    source={require('../../../../assets/imageDesignTop.png')}
+    source={require('../../../../assets/imageTopDesign.png')}
     resizeMode='cover'
-    style={{maxHeight:120}}
+    style={{maxHeight:200}}
     />
     <Styles.TextLogo>LOGO</Styles.TextLogo>
     </>

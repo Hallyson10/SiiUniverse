@@ -11,7 +11,7 @@ export const SubContainerCabecalho = styled.View `
    align-items : center;
    padding-top:50px;
 `
-export const ButtonEntrar = styled.View `
+export const ButtonEntrar = styled.TouchableOpacity `
    min-height : 36px;
    max-height : 36px;
    min-width : 98px;

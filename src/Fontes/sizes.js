@@ -1,6 +1,6 @@
 export default {
-    small : 10,
-    medium : 14.8,
+    small : 13.2,
+    medium : 15,
     medium_large : 18,
     large : 20
 }

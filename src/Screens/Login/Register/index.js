@@ -7,7 +7,9 @@ const Register = () => {
   return (
       <Styles.Container>
           <FormRegister />
-          <ButtomRegister/>
+          <ButtomRegister
+            title='Cadastrar'
+          />
       </Styles.Container>
   )
 }

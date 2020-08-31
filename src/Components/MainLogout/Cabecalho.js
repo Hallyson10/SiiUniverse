@@ -1,17 +1,12 @@
 import React from 'react';
 import * as Styles from './styles';
-
-const MainLogout = () => {
+const MainLogout = (props) => {
   return (
       <Styles.ContainerCabecalho
       source={require('../../../assets/conceito.png')}
       resizeMode='cover'
       >
-      <Styles.ButtonEntrar>
-        <Styles.TitleButtonEntrar>
-          Entrar
-        </Styles.TitleButtonEntrar>
-      </Styles.ButtonEntrar>
+      {props.ButtonConfig}
       <Styles.SubContainerCabecalho>
         <Styles.TitleDescriptionCabecalho>
         Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry

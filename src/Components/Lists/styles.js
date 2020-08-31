@@ -4,7 +4,7 @@ import size from '../../Fontes/sizes';
 
 export const ContainerVertical = styled.View `
   background : ${colors.backgroundMain};
-  margin-top : 10px;
+  margin-bottom : 10px;
   padding-top:20px;
 `
 export const ContainerTitleOption = styled.View `
