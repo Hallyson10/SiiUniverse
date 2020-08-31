@@ -16,8 +16,8 @@ const Itemcomponent = (props) => {
                 {props.title}
               </Styles.TitleButtonOption>
               </Styles.ViewOptions>
-              {props.subTitle ?<Styles.SubTitle>
-                Ligado
+              {props.subTitle !== ""?<Styles.SubTitle>
+                {props.subTitle}
               </Styles.SubTitle> : null}
             { props.subTitleOption ? <Styles.ContainerViewTitleItem
             onPress={props.onPress}

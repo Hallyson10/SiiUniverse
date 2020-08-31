@@ -6,12 +6,12 @@ import ButtonProfile from '../../Components/Bottoms/buttonProfileHeader';
 
 const Main = (props) => {
   const [locaisAdicionados,setLocaisAdicionados] = useState([
-    {id :'1',title:'Quarto',image : require('../../../assets/items.png')},
-    {id :'2',title:'Sala',image : require('../../../assets/items.png')},
-    {id :'3',title:'Quarto',image : require('../../../assets/items.png')},
-    {id :'4',title:'Cozinha',image : require('../../../assets/items.png')},
-    {id :'5',title:'Quarto',image : require('../../../assets/items.png')},
-    {id :'6',title:'Escritório',image : require('../../../assets/items.png')}
+    {id :'1',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
+    {id :'2',title:'Sala',image : require('../../../assets/items.png'),subTitle:'Texto'},
+    {id :'3',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
+    {id :'4',title:'Cozinha',image : require('../../../assets/items.png'),subTitle:'Texto'},
+    {id :'5',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
+    {id :'6',title:'Escritório',image : require('../../../assets/items.png'),subTitle:'Texto'}
     ]);
     const [locaisProximos,setLocaisProximos] = useState([
       {id :'1',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
@@ -32,7 +32,8 @@ const Main = (props) => {
         const [preferencia,setPreferencia] = useState([
           {id :'1',title:'Light',image : require('../../../assets/light.png'),subTitleOption:true},
           {id :'2',title:'Temperature',image : require('../../../assets/temperature.png'),subTitleOption:true},
-          {id :'3',title:'TV',image : require('../../../assets/tv.png'),subTitleOption:true}
+          {id :'3',title:'TV',image : require('../../../assets/tv.png'),subTitleOption:true},
+          {id :'4',title:'Não pertube',image : require('../../../assets/pertube.png'),subTitleOption:true}
           ]);
   return (
       <Styles.Container>

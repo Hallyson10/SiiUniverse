@@ -23,12 +23,12 @@ export const SubContainer = styled.View `
     background : ${colors.background};
     align-items: center;
     justify-content : center;
+    padding-top:20px;
 `
 export const ImageItems = styled.Image `
     max-height : 105px;
     max-width : 105px;
     align-self : center;
-    padding:10px;
 `
 export const TitleButtonOption = styled.Text `
     font-size : ${size.medium}px;
