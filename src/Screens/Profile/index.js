@@ -2,6 +2,7 @@ import React,{ useState } from 'react';
 import * as Styles from './styles';
 import Cabecalho from '../../Components/Profile/Cabecalho';
 import Lists from '../../Components/Lists/listOptions';
+import ImageMainBottom from '../../Components/Main/imageBottom';
 
 const Profile = (props) => {
   const [scene,setScene] = useState([
@@ -31,6 +32,7 @@ const Profile = (props) => {
 
   return (
       <Styles.Container>
+      <Styles.SubContainer>
         <Cabecalho
         goBack={()=>props.navigation.goBack()}
          />
@@ -50,6 +52,8 @@ const Profile = (props) => {
           title='SERVICE'
           data={services}
         />
+        <ImageMainBottom/>
+        </Styles.SubContainer>
       </Styles.Container>
   )
 }

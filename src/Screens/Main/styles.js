@@ -5,3 +5,7 @@ export const Container = styled.ScrollView`
   flex:1;
   background : ${colors.backgroundMain}
 `;
+export const SubContainer = styled.View `
+  flex : 1;
+  margin-bottom : 40px;
+`

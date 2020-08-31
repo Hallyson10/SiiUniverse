@@ -3,6 +3,8 @@ import * as Styles from './styles';
 import Lists from '../../Components/Lists/listOptions';
 import Cabecalho from '../../Components/MainLogout/Cabecalho';
 import ButtonProfile from '../../Components/Bottoms/buttonProfileHeader';
+import ModalRegister from "../RegisterEquipament/index";
+import ImageMainBottom from '../../Components/Main/imageBottom';
 
 const Main = (props) => {
   const [locaisAdicionados,setLocaisAdicionados] = useState([
@@ -37,6 +39,7 @@ const Main = (props) => {
           ]);
   return (
       <Styles.Container>
+      <Styles.SubContainer>
       <Cabecalho
         ButtonConfig={<ButtonProfile/>}
       />
@@ -64,6 +67,9 @@ const Main = (props) => {
             data={preferencia}
             onPress={()=>props.navigation.navigate('Profile')}
           />
+          <ModalRegister/>
+          <ImageMainBottom/>
+          </Styles.SubContainer>
       </Styles.Container>
   )
 }

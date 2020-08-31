@@ -6,17 +6,14 @@ import ButtomLogin from '../../Components/Bottoms/buttonLogin';
 import Register from './Register/index';
 import HeaderComponentLogin from '../../Components/Login/ImageDesign/index';
 import BottomComponentLogin from '../../Components/Login/ImageDesign/bottom';
-import ModalRegister from "../RegisterEquipament/index";
 
 const Login = (props) => {
     const [login,setLogin] = useState(true);
     const [register, setRegister] = useState(false);
 
   return (
-
-      <Styles.Container>
+    <Styles.Container>
     <Styles.SubContainer>
-
       <HeaderComponentLogin/>
             <Buttons
                 onPressLogin={()=>{
@@ -42,7 +39,6 @@ const Login = (props) => {
             }
             <BottomComponentLogin/>
             </Styles.SubContainer>
-            <ModalRegister/>
       </Styles.Container>
 
   )
