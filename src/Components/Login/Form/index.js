@@ -1,17 +1,17 @@
 import React from 'react';
 import * as Styles from './styles';
-const Form = () => {
+const Form = (props) => {
   return (
       <>
       <Styles.Container>
-          <Styles.ButtonBorder placeholder='E-mail'>
+          <Styles.InputSub placeholder='E-mail'>
                
-          </Styles.ButtonBorder>
-          <Styles.Buttom placeholder='Senha'>
+          </Styles.InputSub>
+          <Styles.Input placeholder='Senha'>
               
-          </Styles.Buttom>
+          </Styles.Input>
       </Styles.Container>
-      <Styles.TitleResetPassword>Esqueci minha senha</Styles.TitleResetPassword>
+      <Styles.TitleResetPassword onPress={props.onPressResetPassword}>Esqueci minha senha</Styles.TitleResetPassword>
   </>
   )
 }

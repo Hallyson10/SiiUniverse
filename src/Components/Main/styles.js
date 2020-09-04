@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const ImageDesignBottom = styled.Image `
+export const ImageDesignBottom = styled.Image`
     align-self:flex-end;
     z-index: -1;
     position : absolute;

@@ -6,29 +6,39 @@ const Itemcomponent = (props) => {
   return (
         <Styles.Container
         >
-            <Styles.SubContainer>
+            <Styles.SubContainer
+              atived={props.atived}
+            >
             <Styles.ViewOptions>
-              <Styles.ImageItems
+              {props.uri ? <Styles.ImageItems
                 source={props.uri}
                 resizeMode='contain'
-              />
+              /> : 
+              <Styles.TextVolume>
+                {props.imageTitle}
+              </Styles.TextVolume>
+              }
               <Styles.TitleButtonOption>
                 {props.title}
               </Styles.TitleButtonOption>
               </Styles.ViewOptions>
-              {props.subTitle !== ""?<Styles.SubTitle>
+              {props.subTitle !== "" ? <Styles.SubTitle>
                 {props.subTitle}
               </Styles.SubTitle> : null}
             { props.subTitleOption ? <Styles.ContainerViewTitleItem
-            onPress={props.onPress}
+            onPress={props.onPressAtived}
+            activeOpacity={0.9}
             >
-              <Styles.View>
+              <Styles.View>{props.atived ? 
               <Styles.SubTitleButtonOption>
                 Ligado
-              </Styles.SubTitleButtonOption>
+              </Styles.SubTitleButtonOption> : 
+              <Styles.SubTitleOptionDesatived>
+                Desligado
+              </Styles.SubTitleOptionDesatived>}
               </Styles.View>
               <Styles.IconOptionTitle>
-                <AntDesign name='down' size={18} color='#A7518A'/>
+                {props.atived ? <AntDesign name='up' size={18} color='#A7518A'/> : <AntDesign name='down' size={18} color='#A7518A'/>}
               </Styles.IconOptionTitle>
               </Styles.ContainerViewTitleItem> : null}
             </Styles.SubContainer>

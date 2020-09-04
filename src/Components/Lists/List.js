@@ -25,6 +25,9 @@ const Lists = (props) => {
             title={item.title}
             subTitle={item.subTitle}
             subTitleOption={item.subTitleOption}
+            atived={item.atived}
+            onPressAtived={() => props.onPressAtived(item.id)}
+            imageTitle={item.imageTitle}
         />
         </TouchableOpacity>
     )}

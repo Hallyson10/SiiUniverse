@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import * as Styles from './styles';
 import Header from '../../Components/MainLogout/Cabecalho';
 import Lists from '../../Components/Lists/listOptions';
 import ButtonSignin from '../../Components/Bottoms/buttonSigninHeader';
+import LocaisAdicionadosContext from "../../Contexts/LocaisAdicionados";
+import LocaisProximosContext from "../../Contexts/LocaisProximos";
+import ImageDesignBottom from "../../Components/Main/imageBottom";
 
 const MainLogout = (props) => {
-   const [locaisAdicionados,setLocaisAdicionados] = useState([
-          {id :'1',title:'Quarto',image : require('../../../assets/items.png')}
-    ]);
-       const [locaisProximos,setLocaisProximos] = useState([
-          {id :'1',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-          {id :'2',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-          {id :'3',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'}
-    ]);
+  const { locaisAdicionados } = useContext(LocaisAdicionadosContext);
+  const { locaisProximos } = useContext(LocaisProximosContext);
+
   return (
       <Styles.Container>
+      <Styles.SubContainer>
         <Header
           ButtonConfig={
             <ButtonSignin
@@ -32,6 +31,8 @@ const MainLogout = (props) => {
             navigation={props.navigation}
             data={locaisProximos}
         />
+        <ImageDesignBottom/>
+        </Styles.SubContainer>
       </Styles.Container>
   )
 }

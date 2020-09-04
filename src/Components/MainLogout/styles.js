@@ -5,6 +5,7 @@ import size from '../../Fontes/sizes';
 export const ContainerCabecalho = styled.ImageBackground`
    min-height : 314px;
    max-height : 314px;
+   padding-top : 40px;
 `;
 export const SubContainerCabecalho = styled.View `
    flex:1;

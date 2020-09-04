@@ -1,47 +1,32 @@
-import React,{ useState } from 'react';
+import React,{ useState, useContext } from 'react';
 import * as Styles from './styles';
 import Lists from '../../Components/Lists/listOptions';
+import SubLists from "../../Components/Lists/List";
 import Cabecalho from '../../Components/MainLogout/Cabecalho';
 import ButtonProfile from '../../Components/Bottoms/buttonProfileHeader';
 import ModalRegister from "../RegisterEquipament/index";
 import ImageMainBottom from '../../Components/Main/imageBottom';
+import LocaisAdicionadosContext from "../../Contexts/LocaisAdicionados";
+import PreferenciasContext from "../../Contexts/Preferencias";
+import LocaisProximosContext from "../../Contexts/LocaisProximos";
+import MeusLocaisContext from "../../Contexts/MeusLocais";
+
 
 const Main = (props) => {
-  const [locaisAdicionados,setLocaisAdicionados] = useState([
-    {id :'1',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-    {id :'2',title:'Sala',image : require('../../../assets/items.png'),subTitle:'Texto'},
-    {id :'3',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-    {id :'4',title:'Cozinha',image : require('../../../assets/items.png'),subTitle:'Texto'},
-    {id :'5',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-    {id :'6',title:'Escritório',image : require('../../../assets/items.png'),subTitle:'Texto'}
-    ]);
-    const [locaisProximos,setLocaisProximos] = useState([
-      {id :'1',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-      {id :'2',title:'Sala',image : require('../../../assets/items.png'),subTitle:'Texto'},
-      {id :'3',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-      {id :'4',title:'Cozinha',image : require('../../../assets/items.png'),subTitle:'Texto'},
-      {id :'5',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-      {id :'6',title:'Escritório',image : require('../../../assets/items.png'),subTitle:'Texto'}
-      ]);
-      const [meusLocais,setMeusLocais] = useState([
-        {id :'1',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-        {id :'2',title:'Sala',image : require('../../../assets/items.png'),subTitle:'Texto'},
-        {id :'3',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-        {id :'4',title:'Cozinha',image : require('../../../assets/items.png'),subTitle:'Texto'},
-        {id :'5',title:'Quarto',image : require('../../../assets/items.png'),subTitle:'Texto'},
-        {id :'6',title:'Escritório',image : require('../../../assets/items.png'),subTitle:'Texto'}
-        ]);
-        const [preferencia,setPreferencia] = useState([
-          {id :'1',title:'Light',image : require('../../../assets/light.png'),subTitleOption:true},
-          {id :'2',title:'Temperature',image : require('../../../assets/temperature.png'),subTitleOption:true},
-          {id :'3',title:'TV',image : require('../../../assets/tv.png'),subTitleOption:true},
-          {id :'4',title:'Não pertube',image : require('../../../assets/pertube.png'),subTitleOption:true}
-          ]);
+  const { locaisAdicionados } = useContext(LocaisAdicionadosContext);
+  const { preferencias,setPreferencia,preferencyAtived,subListPreferencyAtived } = useContext(PreferenciasContext);
+  const { locaisProximos } = useContext(LocaisProximosContext);
+  const { meusLocais } = useContext(MeusLocaisContext);
+
+    
   return (
       <Styles.Container>
       <Styles.SubContainer>
       <Cabecalho
-        ButtonConfig={<ButtonProfile/>}
+        ButtonConfig={<ButtonProfile
+          titleOption1="Configurações"
+          titleOption2="Sair"
+        />}
       />
           <Lists
             title='LOCAIS ADICIONADOS'
@@ -64,9 +49,13 @@ const Main = (props) => {
           <Lists
             title='PREFERÊNCIAS'
             navigation={props.navigation}
-            data={preferencia}
+            data={preferencias}
             onPress={()=>props.navigation.navigate('Profile')}
+            onPressAtived={(id)=>setPreferencia(id)}
           />
+          {preferencyAtived ? <SubLists
+              data={subListPreferencyAtived}
+          /> : null}
           <ModalRegister/>
           <ImageMainBottom/>
           </Styles.SubContainer>

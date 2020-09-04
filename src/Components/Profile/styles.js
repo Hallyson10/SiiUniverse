@@ -50,7 +50,7 @@ export const ViewButtonsTop = styled.View `
     justify-content : space-between;
     align-items : center;
     margin-top : 40px;
-    padding-horizontal : 20px;
+    padding-left:20px;
 `
 export const ImageProfileOption = styled.Image `
    max-width : 100px;

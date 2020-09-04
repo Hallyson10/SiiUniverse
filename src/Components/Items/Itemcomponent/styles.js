@@ -20,7 +20,8 @@ export const Container = styled.View`
 `;
 export const SubContainer = styled.View `
     flex:1;
-    background : ${colors.background};
+    background : ${props => props.atived ? colors.selected : colors.background};
+    opacity : ${props => props.atived ? 0.6 : 1};
     align-items: center;
     justify-content : center;
     padding-top:20px;
@@ -43,6 +44,9 @@ export const SubTitleButtonOption = styled(TitleButtonOption) `
     font-size : ${size.small}px;
     color : ${colors.logo};
     margin-top:0px;
+`
+export const SubTitleOptionDesatived = styled(SubTitleButtonOption) `
+        color : #c4c4c4;
 `
 export const SubTitle = styled(SubTitleButtonOption) `
     margin-bottom : 10px;
@@ -68,4 +72,10 @@ export const ViewOptions = styled.View `
 export const View = styled.View `
     flex:1;
     align-items : center
+`
+export const TextVolume = styled.Text `
+    font-size : ${size.large}px;
+    color : ${colors.botao_selecionado_login};
+    align-self : center;
+    text-align : center;
 `

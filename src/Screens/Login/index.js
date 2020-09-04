@@ -29,7 +29,9 @@ const Login = (props) => {
             />{
             login ?
             <> 
-            <Form/>
+            <Form
+              onPressResetPassword={()=>props.navigation.navigate("ResetCode")}
+            />
             <ButtomLogin 
             title='Entrar'
             onPress={()=>props.navigation.navigate('Main')}/>

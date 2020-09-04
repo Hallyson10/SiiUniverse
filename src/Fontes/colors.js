@@ -8,4 +8,5 @@ export default {
     botao_deselecionado_login : '#989898',
     black : '#000000',
     azul : '#12A0DE',
+    selected : "#FFC6E9"
 }

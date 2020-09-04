@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Styles from './styles';
+
 const MainLogout = (props) => {
   return (
       <Styles.ContainerCabecalho

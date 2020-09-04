@@ -1,13 +1,15 @@
 import styled from 'styled-components/native';
-import colors from '../../Fontes/colors';
-import size from '../../Fontes/sizes';
+import colors from "../../Fontes/colors";
+import size from "../../Fontes/sizes";
 
-export const Container = styled.View`
-  flex:1;
-  background : black;
-  background-color: rgba(0,0,0,0.8);
-  align-items : center;
-  justify-content : center
+export const ImageDesignBottom = styled.Image `
+    align-self:flex-end;
+    position : absolute;
+    bottom : 0;
+`
+export const ImageDesignTop = styled.Image`
+    position :absolute;
+    top : 0;
 `;
 export const ContainerView = styled.View`
   flex:1;
@@ -15,7 +17,7 @@ export const ContainerView = styled.View`
   max-height : 380px;
   min-height : 380px;
   min-width : 280px;
-  padding : 10px;
+  padding : 20px;
   border-radius : 2px;
 `;
 

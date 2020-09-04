@@ -15,7 +15,7 @@ export const Container = styled.View`
     shadow-radius: 2.22px;
     elevation: 2;
 `;
-export const Buttom = styled.TextInput `
+export const Input = styled.TextInput `
     min-height : 68px;
     max-height : 68px;
     padding-left : 20px;
@@ -24,7 +24,7 @@ export const Buttom = styled.TextInput `
     color : ${colors.letras_login};
     font-family : ${fontFamily.fontFamily}
 `
-export const ButtonBorder = styled(Buttom) `
+export const InputSub = styled(Input) `
     border-bottom-width : 1px;
     border-color : ${colors.letras_login};
 `

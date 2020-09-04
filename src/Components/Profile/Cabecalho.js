@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styles from './styles';
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import ButtonHeaderRight from "../Bottoms/buttonProfileHeader";
 
 const MainLogout = (props) => {
   return (
@@ -14,8 +15,9 @@ const MainLogout = (props) => {
       >
       <Styles.ViewButtonsTop>
         <AntDesign size={30} name='left' color='#F9F9F9' onPress={props.goBack} />
-        <Styles.ImageProfileOption
-          source={require('../../../assets/user.png')}
+        <ButtonHeaderRight
+          titleOption1="Informações"
+          titleOption2="Sair"
         />
       </Styles.ViewButtonsTop>
       <Styles.SubContainerCabecalho>

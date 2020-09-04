@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
 import * as Styles from './styles';
 import List from './List';
 
@@ -13,6 +13,7 @@ const Lists = (props) => {
         <List 
             data={props.data}
             onPress={props.onPress}
+            onPressAtived={(id)=>props.onPressAtived(id)}
         />
     </Styles.ContainerVertical>
   )
