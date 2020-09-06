@@ -12,11 +12,12 @@ export const Container = styled.View`
     margin-top : 10px;
     padding : 2px;
     shadow-color: ${colors.logo};
-    shadow-offset: 6px 4px;
+    shadow-offset: 0px 1px;
     shadow-opacity: 0.22;
     shadow-radius: 4.65px;
-    elevation: 1;
-    z-index:0
+    elevation: 2;
+    z-index:0;
+    margin-bottom:2px
 `;
 export const SubContainer = styled.View `
     flex:1;

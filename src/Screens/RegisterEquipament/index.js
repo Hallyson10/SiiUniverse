@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
-import { Modal,Alert } from 'react-native';
+import Modal from 'react-native-modal';
+import { View } from "react-native";
 import * as Styles from "./styles";
 import { Video } from 'expo-av';
 
@@ -8,14 +9,13 @@ const RegisterEquipament = (props) => {
     const [modalVisible, setModalVisible] = useState(true);
   return (
         <Modal
-        animationType="slide"
         transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false)
-        }}
+        avoidKeyboard	={true}
+        isVisible={modalVisible}
+        onSwipeComplete={() => setModalVisible(false)}
+      swipeDirection="up"
         >
-        <Styles.Container>
+        <Styles.Container >
         <Styles.ContainerView>
             <Styles.ViewVideo>
             <Video
@@ -40,7 +40,7 @@ const RegisterEquipament = (props) => {
             </Styles.ViewSubContainer>
             </Styles.ContainerView>
         </Styles.Container>
-      </Modal>      
+      </Modal> 
   )
 }
 

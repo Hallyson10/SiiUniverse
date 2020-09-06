@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator,CardStyleInterpolators,TransitionPresets } from '@react-navigation/stack';
 import Main from '../Screens/Main/index';
@@ -17,11 +17,13 @@ import { StatusProvider } from "../Contexts/Status";
 import { ServiceProvider } from "../Contexts/Service";
 import { MenuProvider } from 'react-native-popup-menu';
 import { UserProvider } from "../Contexts/User";
+import  UserContext  from "../Contexts/User";
 import { useFonts } from 'expo-font';
 
 const Stack = createStackNavigator();
 
 export default function Index(){
+    const userContext = useContext(UserContext);
     const [loaded] = useFonts({
         segoe: require('../../assets/fonts/segoe-ui.otf'),
       });
@@ -41,7 +43,7 @@ export default function Index(){
         <ControlsProvider>
         <StatusProvider>
         <ServiceProvider>
-             <Stack.Navigator
+        <Stack.Navigator
             screenOptions={{
               gestureEnabled :true,
               gestureDirection:'horizontal',
@@ -52,6 +54,8 @@ export default function Index(){
             animation="fade"
             headerMode="float"
             >
+            {!userContext.isLogged ? 
+            <>
             <Stack.Screen 
             options={{
             headerShown:false,
@@ -59,26 +63,30 @@ export default function Index(){
             <Stack.Screen 
             options={{
             headerShown:false,
+            }}  name="Login" component={Login} />
+            <Stack.Screen 
+            options={{
+            headerShown:false,
             }}  name="ResetCode" component={ResetCode} />
             
+            </>
+            :
+            <>
             <Stack.Screen 
             options={{
             headerShown:false,
             }}  name="Mainvideo" component={MainVideo} />
-            
             <Stack.Screen 
             options={{
             headerShown:false,
             }}  name="Main" component={Main} />
           
-             <Stack.Screen 
-            options={{
-            headerShown:false,
-            }}  name="Login" component={Login} />
             <Stack.Screen 
             options={{
             headerShown:false,
             }}  name="Profile" component={Profile} />
+            </>
+        }
         </Stack.Navigator>
         </ServiceProvider>
         </StatusProvider>

@@ -5,22 +5,25 @@ const UserContext = createContext({
     name : "",
     email : "",
     password : "",
+    confirmPassword : "",
     isLogged: false,
     Login : ()=>{},
     Register : ()=>{},
     setName : () => {},
     setEmail : () => {},
-    setPassword : () => {}
+    setPassword : () => {},
+    setConfirmPassword : () => {}
 });
 
 export const UserProvider = ( {children} ) => {
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const [confirmPassword,setConfirmPassword] = useState("");
     const [isLogged,setIsLogged] = useState(false);
-
     function Login(){
-        return false;
+        setIsLogged(true)
+        return true;
     }
     function Register(){
             return true;
@@ -36,6 +39,8 @@ export const UserProvider = ( {children} ) => {
                 password : password,
                 setPassword : (password) => setPassword(password),
                 isLogged : isLogged,
+                confirmPassword : confirmPassword,
+                setConfirmPassword : (password) => setConfirmPassword(password),
                 setIsLogged : (isLogged) => setIsLogged(isLogged),
                 Login : () => Login(),
                 Register : () => Register() 

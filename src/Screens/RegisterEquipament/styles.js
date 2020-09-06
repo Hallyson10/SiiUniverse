@@ -1,20 +1,19 @@
 import styled from 'styled-components/native';
 import colors from '../../Fontes/colors';
 import size from '../../Fontes/sizes';
-
+import { Dimensions } from "react-native";
 export const Container = styled.View`
   flex:1;
-  background : black;
-  background-color: rgba(0,0,0,0.8);
   align-items : center;
   justify-content : center
 `;
 export const ContainerView = styled.View`
   flex:1;
   background : ${colors.background};
-  max-height : 380px;
+  align-self : center;
   min-height : 380px;
-  min-width : 280px;
+  max-height : ${Dimensions.get("window").height/1.4}px;
+  min-width : ${Dimensions.get("window").width/1.1}px;
   padding : 10px;
   border-radius : 2px;
 `;

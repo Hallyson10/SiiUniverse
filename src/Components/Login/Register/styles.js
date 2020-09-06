@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import colors from '../../../Fontes/colors';
 import size from '../../../Fontes/sizes';
 
-export const Container = styled.View`
+export const Container = styled.KeyboardAvoidingView`
   border-width : 0.9px;
   border-color : ${colors.letras_login};
   margin-bottom : 10px;
@@ -16,7 +16,7 @@ export const Container = styled.View`
     shadow-radius: 2.22px;
     elevation: 2;
 `;
-export const Buttom = styled.TextInput `
+export const Input1 = styled.TextInput `
     min-height : 68px;
     max-height : 68px;
     padding-left : 20px;
@@ -25,7 +25,7 @@ export const Buttom = styled.TextInput `
     color : ${colors.letras_login};
 
 `
-export const ButtonBorder = styled(Buttom) `
+export const Input2 = styled(Input1) `
     border-bottom-width : 1px;
     border-color : ${colors.letras_login};
 `

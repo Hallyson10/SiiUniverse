@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import fontFamily from '../../../Fontes/family';
 import colors from '../../../Fontes/colors';
+import { Platform } from 'react-native';
 
 export const TextLogo = styled.Text `
 align-self : center;
@@ -17,5 +18,5 @@ export const ImageDesignBottom = styled(ImageDesignTop) `
     z-index: 1;
     position : absolute;
     bottom : 0;
-    margin-bottom : -60px;
+    margin-bottom : ${Platform.OS === "ios" ? 0 : -60}px;
 `
