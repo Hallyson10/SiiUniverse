@@ -5,7 +5,7 @@ const initialVideo = (props) => {
   return (
       <Styles.ImageDesignTop
                   source={require('../../../assets/mainTop.png')}
-                  resizeMode="contain"
+                  resizeMode="cover"
       />
   )
 }

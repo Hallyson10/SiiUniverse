@@ -4,11 +4,13 @@ import Cabecalho from '../../Components/Profile/Cabecalho';
 import Lists from '../../Components/Lists/listOptions';
 import SubList from "../../Components/Lists/List";
 import ImageMainBottom from '../../Components/Main/imageBottom';
-import ScenesContext from "../../Contexts/Scenes";
+import EquipamentosContext from "../../Contexts/Equipamentos";
 import ControlsContext from "../../Contexts/Controls";
+import UserContext from '../../Contexts/User';
 
 const Profile = (props) => {
-  const { scenes } = useContext(ScenesContext);
+  const { scenes,services,status } = useContext(EquipamentosContext);
+  const { LogoutUser } = useContext(UserContext);
   const { 
     controls, 
     subListControlsAtived, 
@@ -17,23 +19,12 @@ const Profile = (props) => {
     AtivedSubSubList,
     subSubControlsAtived } = useContext(ControlsContext);
 
-  const [status,setStatus] = useState([
-      {id :'1',title:'Temperature',image : require('../../../assets/temperature.png'),subTitle:"12Cº"},
-    {id :'2',title:'Energy',image : require('../../../assets/energy.png'),subTitle:"150W"},
-  ]);
-  
-  const [services,setServices] = useState([
-    {id :'1',title:'Suporte',image : require('../../../assets/suporte.png'),subTitleOption:true},
-    {id :'2',title:'Bounty',image : require('../../../assets/bountry.png'),subTitleOption:true},
-    {id :'3',title:'Room Maid',image : require('../../../assets/room.png'),subTitleOption:true},
-  ]);
-
-
   return (
       <Styles.Container>
       <Styles.SubContainer>
         <Cabecalho
         goBack={()=>props.navigation.goBack()}
+        onPressLogout={LogoutUser}
          />
         <Lists 
           title='SCENE'

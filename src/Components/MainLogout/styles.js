@@ -6,6 +6,7 @@ export const ContainerCabecalho = styled.ImageBackground`
    min-height : 314px;
    max-height : 314px;
    padding-top : 40px;
+   background : ${colors.backgroundMain}
 `;
 export const SubContainerCabecalho = styled.View `
    flex:1;

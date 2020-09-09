@@ -1,4 +1,4 @@
-import React,{ useState, useContext } from 'react';
+import React,{ useContext } from 'react';
 import * as Styles from './styles';
 import Lists from '../../Components/Lists/listOptions';
 import SubLists from "../../Components/Lists/List";
@@ -6,18 +6,16 @@ import Cabecalho from '../../Components/MainLogout/Cabecalho';
 import ButtonProfile from '../../Components/Bottoms/buttonProfileHeader';
 import ModalRegister from "../RegisterEquipament/index";
 import ImageMainBottom from '../../Components/Main/imageBottom';
-import LocaisAdicionadosContext from "../../Contexts/LocaisAdicionados";
-import PreferenciasContext from "../../Contexts/Preferencias";
-import LocaisProximosContext from "../../Contexts/LocaisProximos";
-import MeusLocaisContext from "../../Contexts/MeusLocais";
+import EquipamentosContext from "../../Contexts/Equipamentos";
+import UserContext from "../../Contexts/User";
 
 
 const Main = (props) => {
-  const { locaisAdicionados } = useContext(LocaisAdicionadosContext);
-  const { preferencias,setPreferencia,preferencyAtived,subListPreferencyAtived } = useContext(PreferenciasContext);
-  const { locaisProximos } = useContext(LocaisProximosContext);
-  const { meusLocais } = useContext(MeusLocaisContext);
-
+  const { locaisAdicionados } = useContext(EquipamentosContext);
+  const { preferencias,setPreferencia,preferencyAtived,subListPreferencyAtived } = useContext(EquipamentosContext);
+  const { locaisProximos } = useContext(EquipamentosContext);
+  const { meusLocais } = useContext(EquipamentosContext);
+  const { LogoutUser } = useContext(UserContext);
     
   return (
       <Styles.Container>
@@ -26,6 +24,7 @@ const Main = (props) => {
         ButtonConfig={<ButtonProfile
           titleOption1="Configurações"
           titleOption2="Sair"
+          onPressLogout={LogoutUser}
         />}
       />
           <Lists

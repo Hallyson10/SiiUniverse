@@ -18,6 +18,7 @@ const MainLogout = (props) => {
         <ButtonHeaderRight
           titleOption1="Informações"
           titleOption2="Sair"
+          onPressLogout={props.onPressLogout}
         />
       </Styles.ViewButtonsTop>
       <Styles.SubContainerCabecalho>

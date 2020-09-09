@@ -1,15 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import * as Styles from './styles';
 import Header from '../../Components/MainLogout/Cabecalho';
 import Lists from '../../Components/Lists/listOptions';
 import ButtonSignin from '../../Components/Bottoms/buttonSigninHeader';
-import LocaisAdicionadosContext from "../../Contexts/LocaisAdicionados";
-import LocaisProximosContext from "../../Contexts/LocaisProximos";
+import EquipamentosContext from "../../Contexts/Equipamentos";
 import ImageDesignBottom from "../../Components/Main/imageBottom";
 
 const MainLogout = (props) => {
-  const { locaisAdicionados } = useContext(LocaisAdicionadosContext);
-  const { locaisProximos } = useContext(LocaisProximosContext);
+  const { locaisAdicionados } = useContext(EquipamentosContext);
+  const { locaisProximos } = useContext(EquipamentosContext);
 
   return (
       <Styles.Container>

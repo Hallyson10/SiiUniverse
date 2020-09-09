@@ -7,5 +7,5 @@ export const Container = styled.ScrollView`
 `;
 export const SubContainer = styled.View `
   flex : 1;
-  margin-bottom : 40px;
+  padding-bottom : 20px;
 `

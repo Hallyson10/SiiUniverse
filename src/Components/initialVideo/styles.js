@@ -1,17 +1,19 @@
 import styled from 'styled-components/native';
 import colors from "../../Fontes/colors";
 import size from "../../Fontes/sizes";
-import { Platform } from "react-native";
+import { Platform,Dimensions } from "react-native";
 
 export const ImageDesignBottom = styled.Image `
     align-self:flex-end;
     position : absolute;
     bottom : 0;
     margin-bottom : ${Platform.OS === "ios" ? -20 : 0}px;
+    min-width : ${Dimensions.get("window").width/1}px;
 `
 export const ImageDesignTop = styled.Image`
     position :absolute;
     top : 0;
+    min-width : ${Dimensions.get("window").width}px;
 `;
 export const ContainerView = styled.View`
   flex:1;

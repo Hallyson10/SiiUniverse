@@ -18,7 +18,7 @@ const Bottoms = (props) => {
       </MenuTrigger>
       <MenuOptions>
         <MenuOption style={{height:40,justifyContent:'center'}} onSelect={() => alert(`Configurações`)} text={props.titleOption1} />
-        <MenuOption style={{height:40,justifyContent:'center'}} text={props.titleOption2} onSelect={() => alert(`saindo...`)} />
+        <MenuOption style={{height:40,justifyContent:'center'}} text={props.titleOption2} onSelect={props.onPressLogout} />
       </MenuOptions>
     </Menu>
       </Styles.ViewButtonProfile>

@@ -17,8 +17,8 @@ const Login = (props) => {
       setPassword, 
       setName,
       setConfirmPassword, 
-      Login,
-      Register,
+      RegisterUser,
+      LoginUser,
       email, 
       password,
       confirmPassword, 
@@ -54,7 +54,7 @@ const Login = (props) => {
             />
             <ButtomLogin 
             title='Entrar'
-            onPress={Login}/>
+            onPress={LoginUser}/>
             </>
             :
             <Register
@@ -75,4 +75,4 @@ const Login = (props) => {
   )
 }
 
-export default React.memo(Login);
+export default Login;

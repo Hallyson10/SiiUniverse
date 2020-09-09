@@ -24,6 +24,10 @@ const initialVideo = (props) => {
         </Styles.TitleCode>
         <Styles.InputCode
             placeholder='Digite o código...'
+            returnKeyType="done"
+            value={props.video}
+            onChangeText={props.onChangeText}
+            onSubmitEditing={props.doneCode}
         />
     </Styles.ViewSubContainer>
     </Styles.ContainerView>
